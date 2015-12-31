@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Document why we're not using bin/solr in the distribution
+
+JAVA_EXTRA_ARGS="${@:1}"
+
+cd "${JETTY_HOME_PATH}"
+exec java \
+    -server \
+    -Djava.net.preferIPv4Stack=true \
+    -Dsolr.autoSoftCommit.maxTime=3000 \
+    -Djetty.home="${JETTY_HOME_PATH}" \
+    -Dsolr.solr.home="${SOLR_HOME_PATH}" \
+    -Dsolr.data.dir="${SOLR_INDICES_DIR_PATH}" \
+    ${JAVA_EXTRA_ARGS} \
+    -jar "${SOLR_DISTRIBUTION_PATH}/example/start.jar"
