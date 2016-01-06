@@ -2,8 +2,8 @@ FROM java:7-jre
 MAINTAINER 2degrees <2degrees-floss@googlegroups.com>
 
 ENV \
-    SOLR_VERSION=4.10.2 \
-    SOLR_SHA1_CHECKSUM=b913204d07212d7bb814afe4641992f22404a27d \
+    SOLR_VERSION=4.10.4 \
+    SOLR_SHA1_CHECKSUM=0edf666bea51990524e520bdcb811e14b4de4c41 \
     SOLR_USER=solr \
     SOLR_HOME_PATH=/etc/opt/solr \
     JETTY_HOME_PATH=/etc/opt/jetty \
