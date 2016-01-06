@@ -12,6 +12,9 @@ set -o pipefail
 SOLR_DOWNLOAD_PATH="/tmp/solr.tgz"
 
 
+RUNTIME_DEPENDENCIES="cgroup-tools=0.41-6"
+
+
 function download_file() {
     local origin_url="$1"
     local destination_path="$2"
@@ -94,6 +97,20 @@ function configure_jetty_home() {
 }
 
 
+function install_deb_packages() {
+    local package_specs="${@}"
+
+    apt-get update --option "Acquire::Retries=3" --quiet=2
+    apt-get install \
+        --option "Acquire::Retries=3" \
+        --no-install-recommends \
+        --assume-yes \
+        --quiet=2 \
+        ${@}
+    rm -rf /var/lib/apt/lists/*
+}
+
+
 # ===== Main
 
 
@@ -101,3 +118,4 @@ adduser --system "${SOLR_USER}"
 deploy_solr_distribution "$1"
 configure_solr_home
 configure_jetty_home
+install_deb_packages ${RUNTIME_DEPENDENCIES}
