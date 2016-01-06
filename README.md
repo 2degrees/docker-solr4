@@ -73,5 +73,5 @@ For example:
         .
 
 Note the absence of a trailing slash in the URL. The example above assumes that
-the Solr distribution archive is
+the URL to the Solr distribution archive is
 `http://example.com/solr-mirror/solr-4.X.Y.tgz`.
