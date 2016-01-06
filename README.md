@@ -39,7 +39,6 @@ environment variable where possible.
 - Solr Distribution (`${SOLR_DISTRIBUTION_PATH}`): `/opt/solr`
 - Jetty Home (`${JETTY_HOME_PATH}`): `/etc/opt/jetty`
 - Solr indices (`${SOLR_INDICES_DIR_PATH}`): `/var/opt/solr/indices`
-- Server script: `/usr/local/bin/solr`
 
 
 ## The `solr` Command
