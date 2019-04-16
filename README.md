@@ -1,5 +1,7 @@
 # Docker Image for Solr v4
 
+**Warning** This project is no longer actively maintained.
+
 This is Docker image allows you to run Solr v4 with the default Jetty server
 in a multi-core setup. To use it, simply place your core directory in the Solr
 home; e.g.:
